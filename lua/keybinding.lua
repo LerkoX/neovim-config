@@ -361,7 +361,7 @@ map("v", "<leader>tt", ":'<,'>Translate<CR>", opt)
 
 vim.keymap.set({ "n", "x" }, "ga", function() require("opencode").toggle() end,                        { desc = "Toggle opencode" })
 vim.keymap.set({ "n", "x" }, "gos", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
-vim.keymap.set({ "n", "x" }, "gof", function() return require("opencode").operator(vim.fn.expand("%:p") .. " ") end, { desc = "Add file path to opencode", expr = true })
+vim.keymap.set({ "n", "x" }, "gof", function() return require("opencode").operator("@buffer ") end, { desc = "Add file path to opencode", expr = true })
 vim.keymap.set({ "n", "x" }, "goo",  function() return require("opencode").operator("@this ") end,{ desc = "Add range to opencode", expr = true })                                       
 
 -- vim-fugitive git 插件
