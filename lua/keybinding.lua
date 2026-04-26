@@ -321,17 +321,10 @@ map("v", "<leader>tr", ":TranslateR<CR>", opt)
 map("v", "<leader>tt", ":'<,'>Translate<CR>", opt)
 
 
--- 设置opencode的快捷键 (仿照claudecode风格)
-map("n", "<leader>a", "<cmd>lua require('opencode').ask('@this: ', { submit = true })<CR>", { noremap = true, silent = true })
-map("n", "<leader>ac", "<cmd>lua require('opencode').command('session.new')<CR>", { noremap = true, silent = true })
-map("n", "<leader>af", "<cmd>lua require('opencode').toggle()<CR>", { noremap = true, silent = true })
-map("n", "<leader>ar", "<cmd>lua require('opencode').command('session.new')<CR>", { noremap = true, silent = true })
-map("n", "<leader>am", "<cmd>lua require('opencode').select()<CR>", { noremap = true, silent = true })
-map("n", "<leader>ab", "<cmd>lua require('opencode').prompt('@buffer')<CR>", { noremap = true, silent = true })
-map("v", "<leader>as", "<cmd>lua require('opencode').ask('@this: ', { submit = true })<CR>", { noremap = true, silent = true })
-map("n", "<leader>as", "<cmd>lua require('opencode').select()<CR>", { noremap = true, silent = true })
-map("n", "<leader>aa", "<cmd>lua require('opencode').ask('@diagnostics: ')<CR>", { noremap = true, silent = true })
-map("n", "<leader>ad", "<cmd>lua require('opencode').ask('@diff: ')<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "x" }, "ga", function() require("opencode").toggle() end,                        { desc = "Toggle opencode" })
+vim.keymap.set({ "n", "x" }, "gos", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
+vim.keymap.set({ "n", "x" }, "gof", function() require("opencode").operator(vim.fn.expand("%:p") .. " ") end, { desc = "Add file path to opencode", expr = true })
+vim.keymap.set({ "n", "x" }, "goo",  function() return require("opencode").operator("@this ") end,{ desc = "Add range to opencode", expr = true })                                       
 
 -- vim-fugitive git 插件
 

@@ -25,7 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'zbirenbaum/copilot.lua' " GitHub Copilot AI 编码助手
 
 	" 搜索和导航
-	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' } " 模糊查找器和文件搜索
+	Plug 'nvim-telescope/telescope.nvim' " 模糊查找器和文件搜索
 	Plug 'nvim-telescope/telescope-file-browser.nvim' " 文件浏览器集成
 	Plug 'nvim-telescope/telescope-project.nvim' " 项目管理器
 	Plug 'https://codeberg.org/andyg/leap.nvim' " 快速光标跳跃导航
