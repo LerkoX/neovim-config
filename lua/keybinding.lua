@@ -91,7 +91,7 @@ map("n", "sl", ":vertical resize +10<CR>", opt)
 map("n", "st", ":sp | terminal<CR>", opt)
 map("n", "stv", ":vsp | terminal<CR>", opt)
 -- Esc 回 Normal 模式
-map("t", "<leader><Esc>", "<C-\\><C-n>", opt)
+map("t", "<Esc>", "<C-\\><C-n>", opt)
 
 local locked_fts = {
   NvimTree = true,
@@ -363,6 +363,13 @@ vim.keymap.set({ "n", "x" }, "ga", function() require("opencode").toggle() end, 
 vim.keymap.set({ "n", "x" }, "gos", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
 vim.keymap.set({ "n", "x" }, "gof", function() return require("opencode").operator("@buffer ") end, { desc = "Add file path to opencode", expr = true })
 vim.keymap.set({ "n", "x" }, "goo",  function() return require("opencode").operator("@this ") end,{ desc = "Add range to opencode", expr = true })                                       
+vim.keymap.set("n", "<C-Up>", function() require("opencode").command("session.half.page.up") end,   { desc = "Scroll opencode up" })
+vim.keymap.set("n", "<C-Down>", function() require("opencode").command("session.half.page.down") end, { desc = "Scroll opencode down" })
+vim.keymap.set("n", "god", function()
+  require("opencode").command("session.interrupt")
+  require("opencode").command("session.interrupt")
+end, { desc = "interrupt" })
+
 
 -- vim-fugitive git 插件
 
