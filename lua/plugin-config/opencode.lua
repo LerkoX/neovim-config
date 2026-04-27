@@ -1,7 +1,8 @@
-require('opencode').setup({
+vim.o.autoread = true
+
+vim.g.opencode_opts = {
   server = {
     start = function()
-      vim.o.autoread = true
     end,
   },
-})
+}

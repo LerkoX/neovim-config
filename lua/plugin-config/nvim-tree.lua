@@ -2,7 +2,6 @@
 -- local nvim_tree = require'nvim-tree'
 nvim_tree = require("nvim-tree") 
 -- 列表操作快捷键
-local list_keys = require("keybinding").nvimTreeList
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
 

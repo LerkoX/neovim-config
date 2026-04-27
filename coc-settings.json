@@ -3,7 +3,6 @@
     "go": {
       "command": "gopls",
       "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
       "filetypes": ["go"]
     }
   },
@@ -12,4 +11,8 @@
   "diagnostic.refreshOnInsertMode": true,
   "suggest.triggerCompletionWait": 0,
   "coc.preferences.jumpCommand": "edit",
+  "coc.preferences.disableErrorHandle": true,
+  "languageServerFeatures": {
+    "diagnosticsPullOnSave": false
+  }
 }

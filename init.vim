@@ -25,7 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'zbirenbaum/copilot.lua' " GitHub Copilot AI 编码助手
 
 	" 搜索和导航
-	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' } " 模糊查找器和文件搜索
+	Plug 'nvim-telescope/telescope.nvim' " 模糊查找器和文件搜索
 	Plug 'nvim-telescope/telescope-file-browser.nvim' " 文件浏览器集成
 	Plug 'nvim-telescope/telescope-project.nvim' " 项目管理器
 	Plug 'https://codeberg.org/andyg/leap.nvim' " 快速光标跳跃导航
@@ -65,6 +65,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'echasnovski/mini.nvim', { 'branch': 'stable' } " 小型工具集合
 	Plug 'echasnovski/mini.icons' " 图标库
 	Plug 'LunarVim/bigfile.nvim' " 大文件加载优化
+	Plug 'stevearc/stickybuf.nvim' " 锁定特殊窗口不被移动
 
 	" 会话和历史
 	Plug 'folke/persistence.nvim' " 会话持久化保存
@@ -135,8 +136,4 @@ safe_require('plugin-config/minimap')
 safe_require('plugin-config/transparent')
 safe_require('plugin-config/supermaven')
 safe_require('plugin-config/opencode')
-safe_require('plugin-config/diagram')
--- safe_require('plugin-config/dap-ui')
--- safe_require('plugin-config/windows-picker')
--- safe_require('plugin-config/neoscroll')
-EOF
+safe_require('plugin-config/stickybuf')
